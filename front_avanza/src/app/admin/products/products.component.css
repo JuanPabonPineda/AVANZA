@@ -1,0 +1,47 @@
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 2%;
+  width: auto;
+  height: 80%;
+}
+.mat-card{
+  height: auto;
+}
+.tab {
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+}
+.tab-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  /*padding-bottom: 5%;*/
+  /*padding-top: 5%;*/
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mat-form-field {
+  width: 220px;
+  padding: 0 10px 0 10px !important;
+}
+.mat-card-title{
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 10px 0;
+  color: darkgray;
+  font-size: medium;
+}
+.button-content{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 150px;
+  padding-top: 20px;
+}
+.mat-raised-button{
+  background: #f44336;
+}

@@ -1,0 +1,23 @@
+.container{
+}
+.mat-h1{
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-left: 5%;
+}
+.container-content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+}
+.card-content{
+  display: flex;
+  width: 45%;
+}
+
+.img{
+  width: 100%;
+}

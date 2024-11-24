@@ -1,0 +1,47 @@
+<div class="dialog-container">
+  <h1 mat-dialog-title>Edición de usuario</h1>
+  <form [formGroup]="userForm" (ngSubmit)="saveUser()">
+    <div class="row">
+      <!--nombre-->
+      <mat-form-field>
+        <mat-label for="name">Nombre</mat-label>
+        <input matInput id="name" name="name" formControlName="name"/>
+      </mat-form-field>
+      <!--apellido-->
+      <mat-form-field>
+        <mat-label for="lastName">Apellido</mat-label>
+        <input matInput id="lastName" name="lastName" formControlName="lastName"/>
+      </mat-form-field>
+      <!--username-->
+      <mat-form-field>
+        <mat-label for="username">Usuario</mat-label>
+        <input matInput id="username" name="username" formControlName="username"/>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <!--cargo-->
+      <mat-form-field>
+        <mat-label for="position">Cargo</mat-label>
+        <input matInput id="position" name="position" formControlName="position"/>
+      </mat-form-field>
+      <!--Rol-->
+      <mat-form-field>
+        <mat-label for="rol">Rol</mat-label>
+        <input matInput id="rol" name="rol" formControlName="rol"/>
+      </mat-form-field>
+      <!--Contraseña-->
+      <mat-form-field>
+        <mat-label for="password">Constraseña</mat-label>
+        <input matInput id="password" name="password" formControlName="password"/>
+      </mat-form-field>
+    </div>
+    <div class="button-content">
+      <button type="submit"
+              ngClass="{{userForm.valid ? 'cursor-pointer' : 'cursor-not-allowed'}}"
+              mat-button color="primary">Confirmar
+      </button>
+      <button mat-button (click)="cancelar()">Cancelar</button>
+
+    </div>
+  </form>
+</div>

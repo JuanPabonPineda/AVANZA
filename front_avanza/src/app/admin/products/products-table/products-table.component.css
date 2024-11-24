@@ -1,0 +1,40 @@
+.table-container{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  margin: auto;
+  width: 100%;
+}
+
+.mat-header-cell{
+  border-bottom-width: 3px;
+  font-weight: 1000;
+  text-align: center;
+  background-color: rgba(104, 104, 106, 0.23);
+  height: 20px;
+  font-size: 12px;
+}
+
+.mat-cell{
+  text-align: center;
+  font-weight: 300;
+  font-size: 10px;
+  /*padding-l: 30px;*/
+}
+
+tr.mat-row{
+  height: 30px;
+}
+
+.mat-icon-button {
+  color: #f44336;
+}
+
+.mat-table {
+  overflow: auto;
+}
+
+.td.mat-cell:first-of-type{
+  padding-left: 0;
+}
+

@@ -1,0 +1,15 @@
+<div class="modal">
+  <div class="modal-content">
+    <div class="icon">
+      <button mat-icon-button (click)="close()" style="float: right; ">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <h2>Seleccionar método de pago</h2>
+    <h3 class="center-text">$ {{valuePay}}</h3>
+    <div class="row">
+      <button class="button-primary" mat-raised-button color="primary" (click)="selectCard()">Tarjeta</button>
+      <button class="button-secondary" mat-raised-button color="primary" (click)="selectCash()">Efectivo</button>
+    </div>
+  </div>
+</div>

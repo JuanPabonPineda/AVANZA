@@ -1,0 +1,99 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: flex-start;
+  margin: 2%;
+}
+
+.container-header {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+}
+
+.mat-cell{
+  text-align: center;
+  font-weight: 300;
+  font-size: 10px;
+  /*padding-l: 30px;*/
+}
+
+.mat-raised-button {
+  background: #f44336;
+}
+
+.mat-form-field {
+  width: 150px;
+  padding: 5px;
+}
+
+ /**Table**/
+.container-content{
+  display: flex;
+  /*margin: auto;*/
+  margin-left: 5%;
+  justify-items: end;
+  max-height: 250px;
+}
+.details-container{
+  display: flex;
+  width: 200px;
+  height: 180px;
+  background-color: rgba(104, 104, 106, 0.23);
+  flex-direction: column;
+  padding: 0 15px 0 15px;
+}
+.sub-container{
+  align-content: center;
+  font-size: xx-large;
+  color: #36f456;
+  background-color: #323232;
+  height: 50px;
+  padding: 5px;
+}
+.table-container{
+  display: flex;
+  flex-direction: column;
+  justify-items: end;
+  margin: auto;
+  width: 70%;
+  height: 330px;
+  overflow-x: scroll;
+}
+.mat-header-cell{
+  border-bottom-width: 3px;
+  font-weight: 1000;
+  text-align: center;
+  background-color: rgba(104, 104, 106, 0.23);
+  height: 10px;
+  font-size: 12px;
+  min-width: 100px;
+}
+tr.mat-row {
+  height: 20px;
+}
+
+tr.mat-header-row {
+  height: 20px;
+}
+
+.button-content{
+  display: flex;
+  justify-content: start;
+  padding-top: 20px;
+  margin-right: 50px;
+}
+
+.button-secondary {
+  background: #ffffff;
+  color: #f44336;
+  margin: 10px;
+}
+
+.button-primary {
+  background: #f44336;
+  color: #ffffff;
+  margin: 10px;
+}
+

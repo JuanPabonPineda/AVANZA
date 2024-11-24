@@ -1,0 +1,17 @@
+<div class="grid-container">
+  <div class="grid-item">
+    <div class="flex justify-end mt-5 mr-5">
+      <mat-form-field>
+        <mat-label>Consultar producto</mat-label>
+        <input matInput (keydown.enter)="getProduct()" placeholder="Código"
+               [(ngModel)]="_codigo"/>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="grid-item">
+    <app-products-table
+      [dataSource]="_dataTable"
+    >
+    </app-products-table>
+  </div>
+</div>

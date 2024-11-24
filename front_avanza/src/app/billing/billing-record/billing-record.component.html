@@ -1,0 +1,96 @@
+<div class="container">
+  <h1>Registrar factura</h1>
+  <div class="container-header">
+    <form [formGroup]="recordForm" (keydown.enter)="saveClient()">
+      <div class="row">
+        <!--Identificación-->
+        <mat-form-field>
+          <mat-label for="number">Identificación</mat-label>
+          <input matInput formControlName="number" soloNumeros/>
+          <mat-error *ngIf="recordForm.get('number')?.errors?.['required']">
+            Campo requerido
+          </mat-error>
+        </mat-form-field>
+        <!--name-->
+        <mat-form-field>
+          <mat-label for="name">Nombre</mat-label>
+          <input matInput formControlName="name" soloLetras
+                 pattern="[a-zA-Z ]{2,99}"/>
+          <mat-error *ngIf="recordForm.get('name')?.errors?.['pattern']">
+            Caracteres no validos
+          </mat-error>
+        </mat-form-field>
+        <!--seller-->
+        <mat-form-field>
+          <mat-label for="seller">Vendedor</mat-label>
+          <input matInput formControlName="seller" soloNumeros/>
+        </mat-form-field>
+        <!--Invoice-->
+        <mat-form-field>
+          <mat-label for="invoiceNumber">No.Factura</mat-label>
+          <input matInput formControlName="invoiceNumber" soloNumeros/>
+        </mat-form-field>
+        <button class="button-secondary" type="button" mat-raised-button color="primary" (click)="preloadData()">
+          Limpiar
+        </button>
+        <button class="button-primary"
+                type="button"
+                ngClass="{{recordForm.valid ? 'cursor-pointer' : 'cursor-not-allowed'}}"
+                mat-raised-button color="primary" (click)="payment()">
+          Pagar
+        </button>
+        <button class="button-secondary" mat-raised-button color="primary" (click)="download()">
+          Imprimir factura
+        </button>
+        <app-payment-modal *ngIf="showPaymentModal"
+                           [valuePay]="showTotalValue"
+                           (closeModal)="closePaymentModal()"
+                           (payModal)="payModal($event)">
+        </app-payment-modal>
+      </div>
+    </form>
+  </div>
+  <div class="container-content">
+    <div class="details-container">
+      <div>
+        <form [formGroup]="productForm" (keydown.enter)="recordProduct()">
+          <!--Code-->
+          <mat-form-field>
+            <mat-label for="code">Código</mat-label>
+            <input matInput formControlName="code" soloNumeros/>
+          </mat-form-field>
+          <mat-error *ngIf="recordForm.get('code')?.errors?.['pattern']">
+            Caracteres no validos
+          </mat-error>
+        </form>
+      </div>
+      <label class="text-dark-green" > Total</label>
+      <div class="sub-container">
+        <label>$ {{showTotalValue}}</label>
+      </div>
+    </div>
+    <div class="table-container">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 ">
+          <!-- Id Column -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID</th>
+            <td mat-cell *matCellDef="let element"> {{element.id}}
+            </td>
+          </ng-container>
+          <!-- Description Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef> DESCRIPCIÓN</th>
+            <td mat-cell *matCellDef="let element"> {{element.description}}</td>
+          </ng-container>
+          <!-- Value Column -->
+          <ng-container matColumnDef="value">
+            <th mat-header-cell *matHeaderCellDef> VALOR</th>
+            <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+  </div>
+</div>
+

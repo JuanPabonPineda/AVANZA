@@ -1,0 +1,63 @@
+<div class="form-content">
+
+  <form [formGroup]="productsForm" (ngSubmit)="saveNewProduct()">
+
+    <!--reference-->
+    <div class="items">
+      <mat-form-field>
+        <mat-label for="reference">Referencia</mat-label>
+        <input matInput formControlName="reference"/>
+      </mat-form-field>
+      <!--brand-->
+      <mat-form-field>
+        <mat-label for="brand">Marca</mat-label>
+        <input matInput formControlName="brand"/>
+      </mat-form-field>
+      <!--price-->
+      <mat-form-field>
+        <mat-label for="price">Precio</mat-label>
+        <input matInput formControlName="price"/>
+      </mat-form-field>
+    </div>
+    <div>
+      <!--category-->
+      <mat-form-field>
+        <mat-label for="category">Categoria</mat-label>
+        <input matInput formControlName="category"/>
+      </mat-form-field>
+      <!--stocks-->
+      <mat-form-field>
+        <mat-label for="stocks">Disponibles</mat-label>
+        <input matInput formControlName="stocks"/>
+      </mat-form-field>
+      <!--discount-->
+      <mat-form-field>
+        <mat-label for="discount">Descuento</mat-label>
+        <input matInput formControlName="discount"/>
+      </mat-form-field>
+    </div>
+    <div>
+      <!--status-->
+      <mat-form-field>
+        <mat-label>Estado</mat-label>
+        <mat-select formControlName="status">
+          <mat-option [value]="true">{{productStatus.Activo}}</mat-option>
+          <mat-option [value]="false">{{productStatus.Inactivo}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <!--code-->
+      <mat-form-field>
+        <mat-label for="code">Código</mat-label>
+        <input matInput formControlName="code"/>
+      </mat-form-field>
+    </div>
+    <div class="button-content">
+      <button type="submit"
+              ngClass="{{productsForm.valid ? 'cursor-pointer' : 'cursor-not-allowed'}}"
+              mat-raised-button color="primary"
+      >
+        Guardar
+      </button>
+    </div>
+  </form>
+</div>

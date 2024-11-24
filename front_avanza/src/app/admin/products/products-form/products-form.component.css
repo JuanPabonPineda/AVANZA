@@ -1,0 +1,19 @@
+.form-content{
+  display: flex;
+}
+
+.button-content{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50px;
+  /*padding-top: 20px;*/
+}
+
+.mat-raised-button{
+  background: #f44336;
+}
+
+.mat-form-field {
+  width: 200px;
+  padding: 10px;
+}

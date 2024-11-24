@@ -1,0 +1,31 @@
+<div class="grid-container">
+  <mat-card class="card">
+    <mat-card-title>
+      Login
+    </mat-card-title>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="fields">
+        <!--username-->
+        <mat-form-field>
+          <mat-label for="username">Usuario</mat-label>
+          <input matInput formControlName="username"/>
+        </mat-form-field>
+
+        <!--password-->
+        <mat-form-field>
+          <mat-label for="password">Contraseña</mat-label>
+          <input matInput type="password" formControlName="password"/>
+        </mat-form-field>
+      </div>
+
+      <div class="button-content">
+        <button [disabled]="loading"
+                type="submit"
+                ngClass="{{loginForm.valid ? 'cursor-pointer' : 'cursor-not-allowed'}}"
+                mat-raised-button color="primary">
+          Ingresar
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>

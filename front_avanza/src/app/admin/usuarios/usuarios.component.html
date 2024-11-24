@@ -1,0 +1,72 @@
+<div class="grid-container">
+<!--  <h1 class="mat-h1">Usuarios</h1>-->
+  <mat-card class="card">
+    <mat-tab-group (selectedTabChange)="tabFn($event)">
+      <mat-tab label="Consultar">
+        <div class="tab">
+          <mat-card-title>
+            Lista de usuarios
+          </mat-card-title>
+          <app-users-table
+            [dataSource]="_dataTable"
+            (onEditUser)="editUser($event)"
+            (onRemoveUser)="removeUser($event)">
+          </app-users-table>
+        </div>
+      </mat-tab>
+      <mat-tab label="Registrar">
+        <div class="tab">
+          <mat-card-title>
+            Formulario registro de usuario
+          </mat-card-title>
+          <div class="tab-content">
+            <form [formGroup]="userForm" (ngSubmit)="saveNewUser()">
+              <div>
+                <!--nombre-->
+                <mat-form-field>
+                  <mat-label for="name">Nombre</mat-label>
+                  <input matInput id="name" name="name" formControlName="name"/>
+                </mat-form-field>
+                <!--apellido-->
+                <mat-form-field>
+                  <mat-label for="lastName">Apellido</mat-label>
+                  <input matInput id="lastName" name="lastName" formControlName="lastName"/>
+                </mat-form-field>
+                <!--username-->
+                <mat-form-field>
+                  <mat-label for="username">Usuario</mat-label>
+                  <input matInput id="username" name="username" formControlName="username"/>
+                </mat-form-field>
+              </div>
+              <div>
+                <!--cargo-->
+                <mat-form-field>
+                  <mat-label for="position">Cargo</mat-label>
+                  <input matInput id="position" name="position" formControlName="position"/>
+                </mat-form-field>
+                <!--Rol-->
+                <mat-form-field>
+                  <mat-label for="rol">Rol</mat-label>
+                  <input matInput id="rol" name="rol" formControlName="rol"/>
+                </mat-form-field>
+                <!--Contraseña-->
+                <mat-form-field>
+                  <mat-label for="password">Constraseña</mat-label>
+                  <input matInput id="password" name="password" type="password" formControlName="password"/>
+                </mat-form-field>
+              </div>
+              <div class="button-content">
+                <button type="submit"
+                        ngClass="{{userForm.valid ? 'cursor-pointer' : 'cursor-not-allowed'}}"
+                        mat-raised-button color="primary"
+                >
+                  Guardar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>

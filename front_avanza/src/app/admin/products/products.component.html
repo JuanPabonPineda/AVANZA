@@ -1,0 +1,38 @@
+<div class="grid-container">
+<!--  <h1 class="mat-h1">Productos</h1>-->
+  <mat-card class="">
+    <mat-tab-group (selectedTabChange)="tabFn($event)">
+      <mat-tab label="Consultar">
+        <div class="tab">
+<!--          <mat-card-title>-->
+<!--          </mat-card-title>-->
+          <div class="flex justify-end mt-5 mr-5">
+            <mat-form-field>
+              <mat-label>Filtro de Productos</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Buscar"/>
+            </mat-form-field>
+          </div>
+          <app-products-table
+          [dataSource]="_dataTable"
+          (onEditProduct)="updateProduct($event)"
+          (onRemoveProduct)="removeProduct($event)"
+          >
+          </app-products-table>
+        </div>
+      </mat-tab>
+      <!--Tap registro-->
+      <mat-tab label="Registrar">
+        <div class="tab">
+          <mat-card-title>
+            Formulario registro de producto
+          </mat-card-title>
+          <div class="tab-content">
+            <app-products-form (onSaveProduct)="saveNewProduct($event)">
+            </app-products-form>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>
+
